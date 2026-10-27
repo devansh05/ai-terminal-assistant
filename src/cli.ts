@@ -50,7 +50,7 @@ export function createCli() {
     .option("-v, --verbose", "Show verbose output")
     .action(async (prompt: string, opts: { verbose?: boolean }) => {
       requireApiKey();
-      await runQuery(prompt);
+      await runQuery(prompt, { verbose: opts.verbose });
     });
 
   // default
